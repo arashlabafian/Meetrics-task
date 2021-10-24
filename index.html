@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Ad Detection</title>
+  <style>
+    body {
+      height: 2000px;
+      width: 2500px;
+    }
+
+    #ad {
+      width: 300px;
+      height: 250px;
+      background: #ee7202;
+      position: relative;
+      left: 100px;
+      top: 100px;
+    }
+
+    .metrics {
+      background-color: #d9d9d9;
+      position: fixed;
+      right: 2%;
+      bottom: 2%;
+      height: 10rem;
+      width: 20rem;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0px 2px 8px 0px #898989
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ad">
+    ADVERTISEMENT
+  </div>
+  <div class="metrics">
+    <p id="viewable">Ad is viewable: true</p>
+    <p id='time'>Viewability time of the ad in sec: 4</p>
+    <p id="percentage">Viewabile percentage: 100.0%</p>
+    <p id="clicked">Clicked 0 times.</p>
+  </div>
+</body>
+<script src="script.js"></script>
+<script>
+  function printStatus() {
+    if (typeof window.log === "function") {
+      window.log()
+    }
+
+    setTimeout(printStatus, 500);
+  }
+
+  printStatus();
+</script>
+
+</html>
